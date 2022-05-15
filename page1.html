@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Shadows+Into+Light&display=swap"
+        rel="stylesheet">
+    <title>Prijavite se</title>
+</head>
+
+<body>
+    <section>
+        <header>
+            <a href="page.html"><img class="logo" src="slike/svecalogo.png" alt="logo"></a>
+            <nav class="header_nav">
+                <ul class="nav_links">
+                    <li><a href="#">O svećama</a></li>
+                    <li><a href="#">Galerija</a></li>
+                    <li><a href="#">Poručivanje</a></li>
+                    <li><a href="#">Kontakt</a></li>
+                </ul>
+            </nav>
+            <nav class="desno">
+                <ul class="nav_links">
+                    <li><a class="cta" href="page1.html">Prijavite se</a>
+                    <li><img class="korpa" src="slike/korpa.png" alt="korpa">
+                </ul>
+            </nav>
+        </header>
+        <div class="container">
+            <div class="box">
+                <h3>Prijavite se</h3>
+                <div class="ime-1">
+                    <input type="text" placeholder="Ime" id="ime" required>
+                </div>
+                <div class="prezime-1">
+                    <input type="text" placeholder="Prezime" id="prezime" required>
+                </div>
+                <div class="email-1">
+                    <input type="email" placeholder="Email" id="email" required>
+                </div>
+                <div class="password-1">
+                    <input type="password" placeholder="Lozinka" id="password" required>
+                </div>
+                <div class="button">
+                    <button id="potvrdi" onclick="prijavaAlert()" disabled>Potvrdi</button>
+                </div>
+                <div class="checkbox">
+                    <input type="checkbox" id="checkbox" value="1" onclick="terms_changed(this)">
+                    <label for="checkbox">
+                        Slažem se sa uslovima korišćenja
+                    </label>
+                </div>
+                <div class="info">
+                    <div class="uspesno-1" id="uspesno-1">
+                        Prijava uspešna, molimo Vas potvrdite email adresu.
+                    </div>
+                    <div class="neuspesno-1" id="neuspesno-1">
+                        Potrebno je popuniti sva polja.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="social">
+            <ul class="nav_links">
+                <li><a href="#"><img src="slike/fb.png" alt="facebook">Facebook</a></li>
+                <li><a href="#"><img src="slike/ig.png" alt="instagram">Instagram</a></li>
+                <li><img src="https://icon-library.com/images/telephone-icon-png/telephone-icon-png-3.jpg"
+                        alt="telefon">061/234-5-678</li>
+                <li><img src="https://icon-library.com/images/email-icon-png-transparent/email-icon-png-transparent-0.jpg"
+                        alt="mail">kokossvece@gmail.com</li>
+            </ul>
+        </div>
+    </footer>
+</body>
+
+<!-- Potvrda prijave -->
+<script>
+    function prijavaAlert() {
+        var ime = document.getElementById('ime');
+        var prezime = document.getElementById('prezime');
+        var email = document.getElementById('email');
+        var password = document.getElementById('password');
+        const uspesno = document.getElementById('uspesno-1');
+        const neuspesno = document.getElementById('neuspesno-1');
+
+        if (ime.value === '' || email.value === '' || prezime.value === '' || password.value === '') {
+            neuspesno.style.display = 'block';
+        }
+        else {
+            setTimeout(() => {
+                ime.value = '';
+                prezime.value = '';
+                email.value = '';
+                password.value = '';
+            }, 2000);
+
+            uspesno.style.display = 'block';
+        }
+
+        setTimeout(() => {
+            uspesno.style.display = 'none';
+            neuspesno.style.display = 'none';
+        }, 4000);
+    }
+</script>
+
+<!-- Checkbox -->
+<script>
+    function terms_changed(termsCheckBox) {
+        if (termsCheckBox.checked) {
+            document.getElementById("potvrdi").disabled = false;
+        } else {
+            document.getElementById("potvrdi").disabled = true;
+        }
+    }
+</script>
+
+</html>

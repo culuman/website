@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Shadows+Into+Light&display=swap"
+        rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Kokos sveće</title>
+</head>
+
+<body>
+    <section>
+        <header>
+            <a href="page.html"><img class="logo" src="slike/svecalogo.png" alt="logo"></a>
+            <nav class="header_nav">
+                <ul class="nav_links">
+                    <li><a href="#">O svećama</a></li>
+                    <li><a href="#">Galerija</a></li>
+                    <li><a href="#">Poručivanje</a></li>
+                    <li><a href="#">Kontakt</a></li>
+                </ul>
+            </nav>
+            <nav class="desno">
+                <ul class="nav_links">
+                    <li><a class="cta" href="page1.html">Prijavite se</a>
+                    <li><img class="korpa" src="slike/korpa.png" alt="korpa">
+                </ul>
+            </nav>
+        </header>
+        <div class="border">
+            <h1 class="naslov">Kokos sveće</h1>
+
+            <h2>Mirišljave ukrasne kokos sveće interesantnog dizajna i intenzivnog mirisa. Sveće su
+                ručno izlivene u jednoj polovini pravog kokosa prečnika oko 9cm i mogu biti različitih mirisa, od
+                različitog
+                voska ili sa više fitilja. Nežno pucketanje i treperenje drvenog
+                fitilja prilikom gorenja zvuči baš poput malog kamina, što je jedinstveno i opuštajuće iskustvo.
+            </h2>
+
+            <!-- Slideshow container -->
+            <div class="slideshow-container">
+
+                <!-- Slike -->
+                <div class="slides fade">
+                    <img src="slike/sveca1.jpg" alt="slika1">
+                </div>
+
+                <div class="slides fade">
+                    <img src="slike/sveca2.jpg" alt="slika2">
+                </div>
+
+                <div class="slides fade">
+                    <img src="slike/sveca3.jpg" alt="slika3">
+                </div>
+
+                <div class="slides fade">
+                    <img src="slike/sveca4.jpg" alt="slika4">
+                </div>
+
+                <!-- Napred/nazad -->
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+            <br>
+
+            <!-- Kruzici -->
+            <div style="text-align:center">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot" onclick="currentSlide(4)"></span>
+            </div>
+        </div>
+
+        <div class="border">
+            <h1>Poručivanje</h1>
+            <h2>Molimo Vas odaberite:</h2>
+            <nav class="radio_btn">
+                <form action="">
+                    <p>Miris:</p>
+                    <p>
+                        <input class="radioInput1" type="radio" name="miris" id="kokos" value="kokos" required>
+                        <label for="kokos">Kokos</label>
+                    </p>
+                    <p>
+                        <input class="radioInput1" type="radio" name="miris" id="vanila" value="vanila">
+                        <label for="vanila">Vanila</label>
+                    </p>
+                    <p>
+                        <input class="radioInput1" type="radio" name="miris" id="k-v" value="k-v">
+                        <label for="k-v">Kokos-Vanila</label>
+                    </p>
+                    <p>
+                        <input class="radioInput1" type="radio" name="miris" id="lavanda" value="lavanda">
+                        <label for="lavanda">Lavanda</label>
+                    </p>
+                    <p>
+                        <input class="radioInput1" type="radio" name="miris" id="cimet" value="cimet">
+                        <label for="cimet">Cimet</label>
+                    </p>
+                    <p>
+                        <input class="radioInput1" type="radio" name="miris" id="j-c" value="j-c">
+                        <label for="j-c">Jabuka-Cimet</label>
+                    </p>
+                </form>
+                <form action="">
+                    <p>Vrsta voska:</p>
+                    <p>
+                        <input class="radioInput2" type="radio" name="vosak" id="sojin" value="sojin" required>
+                        <label for="sojin">Sojin</label>
+                    </p>
+                    <p>
+                        <input class="radioInput2" type="radio" name="vosak" id="pcelinji" value="pcelinji">
+                        <label for="pcelinji">Pčelinji</label>
+                    </p>
+                    <p>
+                        <input class="radioInput2" type="radio" name="vosak" id="parafinski" value="parafinski">
+                        <label for="parafinski">Parafinski</label>
+                    </p>
+                </form>
+                <form action="">
+                    <p>Broj fitilja:</p>
+                    <p>
+                        <input class="radioInput3" type="radio" name="fitilj" id="1" value="1" required>
+                        <label for="1">Jedan</label>
+                    </p>
+                    <p>
+                        <input class="radioInput3" type="radio" name="fitilj" id="2" value="2">
+                        <label for="2">Dva</label>
+                    </p>
+                    <p>
+                        <input class="radioInput3" type="radio" name="fitilj" id="3" value="3">
+                        <label for="3">Tri</label>
+                    </p>
+                </form>
+            </nav>
+            <div class="btn_container">
+                <button class="btn" id="submit" onclick="cartAlert()" disabled>Dodaj u korpu</button>
+            </div>
+        </div>
+        <h1>Kontakt</h1>
+        <div class="kontakt">
+            <p>Za sve dodatne informacije slobodno nam se obratite ovde:</p>
+            <p>
+                <img style="float: right;" alt="image"
+                    src="https://icon-library.com/images/telephone-icon-png/telephone-icon-png-3.jpg">
+            <p>
+                <label for="ime">Ime i prezime</label>
+                <input type="text" id="ime" name="ime" required>
+            </p>
+            <p>
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </p>
+            <p>
+                <textarea class="poruka" id="poruka" rows="10" cols="50" name="requests" required
+                    placeholder="Pitajte nas..."></textarea>
+                <br>
+            </p>
+            <p>
+                <button class="btn-2" onclick="porukaAlert()">Pošalji</button>
+            </p>
+            <div class="info">
+                <div class="uspesno" id="uspesno">
+                    Vaša poruka je poslata.
+                </div>
+                <div class="neuspesno" id="neuspesno">
+                    Potrebno je popuniti sva polja.
+                </div>
+            </div>
+            </p>
+    </section>
+
+    <footer>
+        <div class="social">
+            <ul class="nav_links">
+                <li><a href="#"><img src="slike/fb.png" alt="facebook">Facebook</a></li>
+                <li><a href="#"><img src="slike/ig.png" alt="instagram">Instagram</a></li>
+                <li><img src="https://icon-library.com/images/telephone-icon-png/telephone-icon-png-3.jpg"
+                        alt="telefon">061/234-5-678</li>
+                <li><img src="https://icon-library.com/images/email-icon-png-transparent/email-icon-png-transparent-0.jpg"
+                        alt="mail">kokossvece@gmail.com</li>
+            </ul>
+        </div>
+    </footer>
+
+</body>
+<!-- Script za slider -->
+<script>
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    // Next/previous controls
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    // Thumbnail image controls
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("slides");
+        let dots = document.getElementsByClassName("dot");
+        if (n > slides.length) { slideIndex = 1 }
+        if (n < 1) { slideIndex = slides.length }
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+    }
+</script>
+
+<!-- Obavestenje za korpu -->
+<script>
+    function cartAlert() {
+        alert("Proizvod dodat u korpu.");
+    }
+</script>
+
+<!-- Uslov za dodavanje u korpu -->
+<script>
+    var q01 = $('input[name=miris]');
+    var q02 = $('input[name=vosak]');
+    var q03 = $('input[name=fitilj]');
+
+    validate();
+
+    $("input[type='radio']").change(validate);
+
+    function validate() {
+        if ($(q01).is(':checked') && $(q02).is(':checked') && $(q03).is(':checked')) {
+            $(".btn#submit").removeAttr("disabled", false);
+        } else {
+            $(".btn#submit").attr("disabled", true);
+        }
+    }
+</script>
+
+<!-- Poruka poslata -->
+<script>
+    function porukaAlert() {
+        var ime = document.getElementById('ime');
+        var email = document.getElementById('email');
+        var poruka = document.getElementById('poruka');
+        const uspesno = document.getElementById('uspesno');
+        const neuspesno = document.getElementById('neuspesno');
+
+        if (ime.value === '' || email.value === '' || poruka.value === '') {
+            neuspesno.style.display = 'block';
+        }
+        else {
+            setTimeout(() => {
+                ime.value = '';
+                email.value = '';
+                poruka.value = '';
+            }, 2000);
+
+            uspesno.style.display = 'block';
+        }
+
+        setTimeout(() => {
+            uspesno.style.display = 'none';
+            neuspesno.style.display = 'none';
+        }, 4000);
+    }
+</script>
+
+<!-- Sticky header -->
+<script>
+    window.addEventListener("scroll", function () {
+        var header = document.querySelector("header");
+        header.classList.toggle("sticky", window.scrollY > 0);
+    })
+</script>
+
+</html>
